@@ -16,8 +16,16 @@ if age < 18:
     parental_auth.lower()
     if parental_auth == "yes" and order_total < 100:
         print("Order approved")
-    elif parental_auth == "no" and order_total < 100:
-        print("Please get parental authorisation")
+    elif parental_auth == "no" and order_total > 100:
+        print("Please acquire parental authorisation")
     elif parental_auth == "yes" and order_total > 100:
         print("Order total above authorised value")
-    
+elif age >= 18 and order_total > 500:
+    print("Order total above authorised value, please acquire additional authorisation")
+else:
+    print("Order approved")
+
+if valid_disc_code == "yes":
+    order_total = order_total - ((order_total/100)*10)
+    print("Discount code approved")
+    print("Your new order total is",order_total)
